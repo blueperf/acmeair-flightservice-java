@@ -3,13 +3,17 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: acmeair-flightservice-java
+  imageName: acmeair-flightservice-java
   tag: latest
   pullPolicy: IfNotPresent
   resources:
     requests:
       cpu: 200m
       memory: 300Mi
+privateRegistry:
+  enabled: false
+  repository:
+  imagePullSecrets:
 service:
   name: acmeair-flight-service
   type: ClusterIP

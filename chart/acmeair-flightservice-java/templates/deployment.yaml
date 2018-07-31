@@ -16,9 +16,16 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9080"
     spec:
+{{ if .Values.privateRegistry.enabled }}
+      imagePullSecrets:
+        - name: {{ .Values.privateRegistry.imagePullSecrets }}
       containers:
-      - name: "{{  .Chart.Name  }}"
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      - image: "{{ .Values.privateRegistry.repository }}/{{ .Values.image.imageName }}:{{ .Values.image.tag }}"
+{{ else }}
+      containers:
+      - image: "{{ .Values.image.imageName }}:{{ .Values.image.tag }}"
+{{ end }}
+        name: "{{  .Chart.Name  }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
 {{ if .Values.istio.enabled }}
 {{ else }}
