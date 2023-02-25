@@ -19,6 +19,6 @@ package com.acmeair.web;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
-@ApplicationPath("/")
+@ApplicationPath("/flight")
 public class FlightServiceApp extends Application {
 }

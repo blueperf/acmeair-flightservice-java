@@ -95,6 +95,7 @@ public class FlightServiceRest {
   }
 
   @GET
+  @Path("/status")
   public Response status() {
     return Response.ok("OK").build();
   } 
