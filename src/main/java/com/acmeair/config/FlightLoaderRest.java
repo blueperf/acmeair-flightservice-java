@@ -26,7 +26,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 
-@Path("/loader")
+@Path("/flight/loader")
 public class FlightLoaderRest {
   
   @Inject

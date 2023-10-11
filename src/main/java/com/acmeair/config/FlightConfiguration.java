@@ -29,7 +29,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Response;
 
-@Path("/config")
+@Path("/flight/config")
 public class FlightConfiguration {
     
   Logger logger = Logger.getLogger(FlightConfiguration.class.getName());

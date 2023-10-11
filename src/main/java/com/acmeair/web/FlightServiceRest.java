@@ -43,7 +43,7 @@ import jakarta.ws.rs.core.Response;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-@Path("/")
+@Path("/flight")
 @ApplicationScoped
 public class FlightServiceRest {
 
